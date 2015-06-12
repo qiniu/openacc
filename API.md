@@ -52,7 +52,7 @@ scope=<Scope>
 
 返回包同 "用户名/密码登录"。
 
-### RefreshToken清除
+## RefreshToken清除
 
 请求包：
 
