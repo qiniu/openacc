@@ -135,3 +135,18 @@ val=<Enabled>
 ```
 200 OK
 ```
+
+## 查询用户
+
+请求包：
+
+```
+GET /v1/users/info?username=<UserName>& (或者email=<Email> 或者 uid=<UserId> 三选一）
+Authorization: Qiniu <AdminToken>
+```
+
+返回包：
+
+```
+200 OK
+```
