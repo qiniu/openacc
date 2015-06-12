@@ -52,6 +52,22 @@ scope=<Scope>
 
 返回包同 "用户名/密码登录"。
 
+### RefreshToken清除
+
+请求包：
+
+```
+POST /v1/users/logout
+Content-Type: application/x-www-form-urlencoded
+
+refresh_token=<RefreshToken>
+```
+
+返回包：
+
+```
+200 OK
+```
 
 # 管理员接口
 
@@ -123,11 +139,11 @@ email_verified=<IsEmailVerified>
 请求包：
 
 ```
-POST /v1/users/enable
+POST /v1/users/status
 Authorization: Qiniu <AdminToken>
 
 username=<UserName>& (或者email=<Email> 或者 uid=<UserId> 三选一）
-val=<Enabled>
+val=<Status> #用户状态 0: 正常；1: 冻结
 ```
 
 返回包：
@@ -149,4 +165,13 @@ Authorization: Qiniu <AdminToken>
 
 ```
 200 OK
+Content-Type: application/json
+
+{
+  "id": <UserId>,
+  "username": <UserName>,
+  "email": <Email>,
+  "email_verified": <IsEmailVerified>,
+  "status": <Status>
+}
 ```
