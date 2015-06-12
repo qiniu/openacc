@@ -10,7 +10,7 @@ openacc api 协议
 请求包：
 
 ```
-POST /v1/users/token
+POST /v1/user/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=password&
@@ -40,7 +40,7 @@ Content-Type: application/json
 请求包：
 
 ```
-POST /v1/users/token
+POST /v1/user/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=refresh_token&
@@ -57,7 +57,7 @@ scope=<Scope>
 请求包：
 
 ```
-POST /v1/users/logout
+POST /v1/user/logout
 Content-Type: application/x-www-form-urlencoded
 
 refresh_token=<RefreshToken>
@@ -76,7 +76,7 @@ refresh_token=<RefreshToken>
 请求包：
 
 ```
-POST /v1/users
+POST /v1/user/new
 Content-Type: application/x-www-form-urlencoded
 Authorization: Qiniu <AdminToken>
 
@@ -102,7 +102,7 @@ Content-Type: application/json
 请求包：
 
 ```
-POST /v1/users/forget/password
+POST /v1/user/forget/password
 Authorization: Qiniu <AdminToken>
 
 username=<UserName>& (或者email=<Email> 或者 uid=<UserId> 三选一）
@@ -120,7 +120,7 @@ password=<Password>
 请求包：
 
 ```
-POST /v1/users/email
+POST /v1/user/email
 Authorization: Qiniu <AdminToken>
 
 username=<UserName>& (或者email=<Email> 或者 uid=<UserId> 三选一）
@@ -139,7 +139,7 @@ email_verified=<IsEmailVerified>
 请求包：
 
 ```
-POST /v1/users/status
+POST /v1/user/status
 Authorization: Qiniu <AdminToken>
 
 username=<UserName>& (或者email=<Email> 或者 uid=<UserId> 三选一）
@@ -157,7 +157,7 @@ val=<Status> #用户状态 0: 正常；1: 冻结
 请求包：
 
 ```
-GET /v1/users/info?username=<UserName> (或者email=<Email> 或者 uid=<UserId> 三选一）
+GET /v1/user/info?username=<UserName> (或者email=<Email> 或者 uid=<UserId> 三选一）
 Authorization: Qiniu <AdminToken>
 ```
 
